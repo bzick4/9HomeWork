@@ -8,6 +8,6 @@ public class Superman : MonoBehaviour
     [SerializeField] private GenerationRoad _generationRoad;
     private void OnTriggerEnter(Collider other)
     {
-        _generationRoad.Spanw();
+        _generationRoad.Spawn();
     }
 }
