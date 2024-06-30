@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Superman : MonoBehaviour
+public class SpawnRoad : MonoBehaviour
 {
     [SerializeField] private GenerationRoad _generationRoad;
     private void OnTriggerEnter(Collider other)

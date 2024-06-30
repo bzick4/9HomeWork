@@ -1351,9 +1351,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1626818345}
+      - m_Target: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
         m_TargetAssemblyTypeName: SceneManeger, Assembly-CSharp
-        m_MethodName: ChangeScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1413,7 +1413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b965e38022a64cc6bdb3f7d5cc33941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 0
 --- !u!1 &1650927290
 GameObject:
   m_ObjectHideFlags: 0

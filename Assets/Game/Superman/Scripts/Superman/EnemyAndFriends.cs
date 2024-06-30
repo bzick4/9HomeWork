@@ -34,14 +34,14 @@ public class EnemyAndFriends : MonoBehaviour
             EnemyDestroy();
          }
       }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Friends")) 
-        { 
-          Rigidbody friendsRigbody = other.GetComponent<Rigidbody>();
-          if (friendsRigbody != null)
-           {
-            Destroy(other.gameObject, _destroyTime);
-            SaveFriend();
-           } 
-         }
+      if (other.gameObject.layer == LayerMask.NameToLayer("Friends")) 
+      { 
+          Rigidbody friendsRigbody = other.GetComponent<Rigidbody>(); 
+          if (friendsRigbody != null) 
+          { 
+             Destroy(other.gameObject, _destroyTime); 
+             SaveFriend();
+          } 
+      }
    }
 }

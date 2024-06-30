@@ -5,8 +5,9 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Manager : MonoBehaviour
-{
+public class SupermanManager : MonoBehaviour
+{ 
+    [SerializeField] private MovementRoad movement;
     private EnemyAndFriends _enemy, _friends;
     [SerializeField] private TextMeshProUGUI _hp, _kill, _save;
     
@@ -14,9 +15,17 @@ public class Manager : MonoBehaviour
     private int score = 1000;
     private int enemyScore = 50, friendsScore = 30;
 
+    private void Start()
+    {
+        movement.StopMovement();
+    }
+    public void ButtonStartMovement()
+    {
+        movement.StartMovement();
+    }
     private void Update()
     {
-        //OnCheckEnemy();
+        movement.Movement();
         UpdateUI();
         LimitUI();
     }
@@ -27,7 +36,6 @@ public class Manager : MonoBehaviour
         _kill.text = killEnemys.ToString();
         _save.text = saveFriends.ToString();
     }
-
     private void LimitUI()
     {
         int minValue = 0;
