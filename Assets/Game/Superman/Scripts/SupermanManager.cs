@@ -7,13 +7,15 @@ using UnityEngine;
 
 public class SupermanManager : MonoBehaviour
 { 
-    [SerializeField] private MovementRoad movement;
-    private EnemyAndFriends _enemy, _friends;
+    [SerializeField] private Move movement;
+    [SerializeField] private GameObject _panelWin, _panelLose;
     [SerializeField] private TextMeshProUGUI _hp, _kill, _save;
-    
+    private EnemyAndFriends _enemy, _friends;
+
     private int fullHp = 100, enemyStrike = 20, treatment = 10, killEnemys, saveFriends;
     private int score = 1000;
-    private int enemyScore = 50, friendsScore = 30;
+    private int enemyScore = 30, friendsScore = 20;
+    
 
     private void Start()
     {
@@ -21,15 +23,25 @@ public class SupermanManager : MonoBehaviour
     }
     public void ButtonStartMovement()
     {
-        movement.StartMovement();
+       movement.StartMovement();
     }
     private void Update()
     {
-        movement.Movement();
         UpdateUI();
         LimitUI();
+        PanelWin();
+        PanelLose();
     }
-
+    public void Restart()
+    {
+        _panelLose.SetActive(false);
+        _panelWin.SetActive(false);
+        ButtonStartMovement();
+        fullHp = 100;
+        killEnemys = 0;
+        saveFriends = 0;
+        UpdateUI();
+    }
     private void UpdateUI()
     {
         _hp.text = fullHp.ToString();
@@ -45,6 +57,21 @@ public class SupermanManager : MonoBehaviour
         saveFriends = Mathf.Clamp(saveFriends, minValue, maxValue);
     }
 
+    public void PanelLose()
+    {
+        if (fullHp <= 0)
+        {
+            _panelLose.SetActive(true);
+        }
+    }
+    public void PanelWin()
+    {
+        if (killEnemys >= enemyScore || saveFriends >= friendsScore)
+        {
+            
+            _panelWin.SetActive(true);
+        }
+    }
     private void OnEnable()
     {
         EnemyAndFriends.EnemyDisappeared += OnEnemyDisappeared;
