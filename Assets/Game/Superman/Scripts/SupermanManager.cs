@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class SupermanManager : MonoBehaviour
 { 
-    [SerializeField] private Move movement;
+    [SerializeField] private Move _movement;
     [SerializeField] private GameObject _panelWin, _panelLose;
     [SerializeField] private TextMeshProUGUI _hp, _kill, _save;
     private EnemyAndFriends _enemy, _friends;
@@ -19,11 +19,11 @@ public class SupermanManager : MonoBehaviour
 
     private void Start()
     {
-        movement.StopMovement();
+        _movement.StopMovement();
     }
     public void ButtonStartMovement()
     {
-       movement.StartMovement();
+       _movement.StartMovement();
     }
     private void Update()
     {
@@ -59,8 +59,10 @@ public class SupermanManager : MonoBehaviour
 
     public void PanelLose()
     {
+        
         if (fullHp <= 0)
         {
+            _movement.StopMovement();
             _panelLose.SetActive(true);
         }
     }
@@ -68,7 +70,7 @@ public class SupermanManager : MonoBehaviour
     {
         if (killEnemys >= enemyScore || saveFriends >= friendsScore)
         {
-            
+            _movement.StopMovement();
             _panelWin.SetActive(true);
         }
     }

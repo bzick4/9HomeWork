@@ -27,7 +27,6 @@ public class MoveWhiteBall : MonoBehaviour
         {
             rbBall.AddForce(Vector3.forward * _ballForce, ForceMode.Impulse);
             StopMovement();
-            //velocity = Vector3.forward * _ballForce;
         }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    //public float moveSpeed = 5f; // Скорость перемещения персонажа
     public bool isMovement { get; private set; }
     private bool isSlideLeft,isSlideRight;
     [SerializeField]private float _forceAmount, _slideAmount;

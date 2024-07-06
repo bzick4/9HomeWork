@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 public class PoolGame : MonoBehaviour
 {
-    [SerializeField] private float impactForce;
     public static event Action BallDown;
 
     private void BallInHole()

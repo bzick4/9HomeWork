@@ -16,8 +16,8 @@ TagManager:
   - Character
   - BlackBalls
   - Hole
-  - 
-  - 
+  - noGravity
+  - ObjectForExplosion
   - 
   - 
   - 

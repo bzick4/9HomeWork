@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class PoolManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _score;
-    private PoolGame pool;
+    //private PoolGame pool;
     [SerializeField] private MoveWhiteBall whiteBall;
 
     private int totalScore;
@@ -17,7 +17,6 @@ public class PoolManager : MonoBehaviour
     {
         whiteBall.StopMovement();
     }
-
     public void ButtonStartPool()
     {
         whiteBall.StartMovement();
@@ -26,13 +25,10 @@ public class PoolManager : MonoBehaviour
     {
         UpdateUi();
     }
-
-    
     private void UpdateUi()
     {
         _score.text = totalScore.ToString();
     }
-
     private void OnEnable()
     {
         PoolGame.BallDown += OnBallDown;
