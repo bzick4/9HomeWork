@@ -62,7 +62,7 @@ public class SupermanManager : MonoBehaviour
         
         if (fullHp <= 0)
         {
-            _movement.StopMovement();
+            Time.timeScale = 0;
             _panelLose.SetActive(true);
         }
     }
@@ -70,7 +70,7 @@ public class SupermanManager : MonoBehaviour
     {
         if (killEnemys >= enemyScore || saveFriends >= friendsScore)
         {
-            _movement.StopMovement();
+            Time.timeScale = 0;
             _panelWin.SetActive(true);
         }
     }
