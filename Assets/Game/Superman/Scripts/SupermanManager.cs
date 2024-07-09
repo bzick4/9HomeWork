@@ -6,17 +6,25 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class SupermanManager : MonoBehaviour
-{ 
-    [SerializeField] private Move _movement; 
+{
+    [SerializeField] private Move _movement;
     private EnemyAndFriends _enemy, _friends;
-    
+
     private void Start()
     {
         _movement.StopMovement();
     }
+
     public void ButtonStartMovement()
     {
-       _movement.StartMovement();
+        _movement.StartMovement();
     }
-   
+
+    public void Restart()
+    {
+       
+        ButtonStartMovement();
+        
+    }
+
 }
