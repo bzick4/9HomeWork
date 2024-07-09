@@ -35,7 +35,7 @@ public class Move : MonoBehaviour
             rb.velocity = Vector3.right*_slideAmount;
         }
     }
-
+    
     public void StartMovement()
     {
         isMovement = true;
@@ -43,8 +43,10 @@ public class Move : MonoBehaviour
     public void StopMovement()
     {
         isMovement = false;
+        isSlideRight = false;
+        isSlideLeft = false;
     }
-    public void MoveHero()
+    private void MoveHero()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {

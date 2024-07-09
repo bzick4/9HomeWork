@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseScript : MonoBehaviour
-    {
-        private bool isPauseGame;
+{
+    public bool isPauseGame { get; private set; }
 
         public void ButtonPausedGame()
         {
